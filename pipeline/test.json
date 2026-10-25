@@ -15,8 +15,19 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlV2Source",
+						"query": "SELECT * \nfrom PUBLIC.hospitals",
+						"queryTimeout": "02:00:00"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_PostgresSQL",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
