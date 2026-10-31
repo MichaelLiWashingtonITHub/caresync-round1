@@ -77,7 +77,7 @@
 					"source": {
 						"type": "PostgreSqlV2Source",
 						"query": {
-							"value": "SELECT * \nfrom PUBLIC.@{activity('Read_Table_Details').output.firstRow.source_table_name}",
+							"value": "SELECT * \nfrom @{pipeline().parameters.schema}.@{activity('Read_Table_Details').output.firstRow.source_table_name}",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00"
@@ -125,6 +125,10 @@
 		"parameters": {
 			"table_id": {
 				"type": "string"
+			},
+			"schema": {
+				"type": "string",
+				"defaultValue": "public"
 			}
 		},
 		"variables": {
