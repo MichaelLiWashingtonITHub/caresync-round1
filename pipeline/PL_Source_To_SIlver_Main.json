@@ -129,7 +129,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "INSERT \nINTO ctrl.audit_log(adf_run_id,\ttable_id,stage,\tstatus,\trecords_written,start_time)\nVALUES\n('pipeline().parameters.adf_run_id',@{item().table_id}, 'SOURCE_TO_SILVER', 'In_Progress', 2, SYSUTCDATETIME())",
+											"value": "INSERT \nINTO ctrl.audit_log(adf_run_id,\ttable_id,stage,\tstatus,\trecords_written,start_time)\nVALUES\n('@{pipeline().parameters.adf_run_id}',@{item().table_id}, 'SOURCE_TO_SILVER', 'In_Progress', 2, SYSUTCDATETIME())",
 											"type": "Expression"
 										}
 									}
