@@ -248,7 +248,13 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@not(equals(activity('Read_Table_Details').output.firstRowload_type, 'FULL' ))",
+						"type": "Expression"
+					}
+				}
 			},
 			{
 				"name": "checking load type 1",
