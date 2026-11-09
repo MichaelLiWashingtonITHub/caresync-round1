@@ -465,6 +465,9 @@
 			"adf_run_id": {
 				"type": "string",
 				"defaultValue": "a1"
+			},
+			"source_file_format": {
+				"type": "string"
 			}
 		},
 		"variables": {
