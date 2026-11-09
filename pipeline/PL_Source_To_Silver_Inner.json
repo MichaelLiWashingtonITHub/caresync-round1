@@ -51,7 +51,14 @@
 			{
 				"name": "landing to bronze",
 				"type": "DatabricksNotebook",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "check source system",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -293,7 +300,7 @@
 				}
 			},
 			{
-				"name": "Switch1",
+				"name": "check source system",
 				"type": "Switch",
 				"dependsOn": [
 					{
@@ -432,6 +439,10 @@
 											"referenceName": "DS_CSV_Binary",
 											"type": "DatasetReference",
 											"parameters": {
+												"folder": {
+													"value": "@concat(activity('Read_Table_Details').output.firstRow.source_system, '/',activity('Read_Table_Details').output.firstRow.source_table_name, \n'/',\nvariables('Start_time'))",
+													"type": "Expression"
+												},
 												"container": "landing"
 											}
 										}
