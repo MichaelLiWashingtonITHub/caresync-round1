@@ -81,6 +81,10 @@
 						"landing_timestamp": {
 							"value": "@variables('Start_time')",
 							"type": "Expression"
+						},
+						"source_file_format": {
+							"value": "@coalesce(activity('read watermark value').output.firstRow.source_file_format, '')",
+							"type": "Expression"
 						}
 					}
 				},
@@ -465,9 +469,6 @@
 			"adf_run_id": {
 				"type": "string",
 				"defaultValue": "a1"
-			},
-			"source_file_format": {
-				"type": "string"
 			}
 		},
 		"variables": {
