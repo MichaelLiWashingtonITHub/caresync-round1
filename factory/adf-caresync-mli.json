@@ -1,0 +1,12 @@
+{
+	"name": "adf-caresync-mli",
+	"properties": {
+		"globalParameters": {
+			"email_receipents": {
+				"type": "string",
+				"value": "lihb123@yahoo.com;lihb12366@gmail.com"
+			}
+		}
+	},
+	"location": "westus2"
+}
